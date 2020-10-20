@@ -6,7 +6,7 @@ LABEL org.label-schema.build-date="$BUILD_DATE"
 
 LABEL org.label-schema.name="esp-idf-docker"
 
-LABEL org.label-schema.description="Docker image to build and flash ESP32 board using esp-idf."
+LABEL org.label-schema.description="Docker image to build and flash ESP32 boards using esp-idf"
 
 LABEL org.label-schema.usage="https://github.com/zuh0/esp-idf-docker/blob/master/README.md"
 
