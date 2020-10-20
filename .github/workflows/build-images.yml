@@ -20,7 +20,7 @@ jobs:
         id: prepare
         run: |
           DOCKER_IMAGE=zuh0/esp-idf-docker
-          DOCKER_PLATFORMS=linux/amd64
+          DOCKER_PLATFORMS=linux/amd64,linux/arm/v7
           VERSION=master
 
           if [ "${{ github.event_name }}" = "schedule" ]; then
