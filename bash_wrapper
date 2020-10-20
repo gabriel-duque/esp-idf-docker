@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# This is a simple wrapper to source our bash run commands file and then launch
+# given commands or drop a shell.
+
+# Disallow errors
+set -eo pipefail
+
+# Source our bash run commands file if it exists ans is readable
+if test -f "$HOME/.bashrc" -a -r "$HOME/.bashrc"; then
+    . "$HOME/.bashrc"
+fi
+
+# Call commands if given or drop a shell
+if test "$#" -gt 0; then
+    "$@"
+else
+    /usr/bin/env bash
+fi
