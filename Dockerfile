@@ -60,4 +60,4 @@ WORKDIR /root/esp/project
 
 VOLUME /root/esp/project
 
-ENTRYPOINT ["/bash__wrapper"]
+ENTRYPOINT ["/bash_wrapper"]
