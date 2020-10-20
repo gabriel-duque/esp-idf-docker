@@ -1,5 +1,27 @@
 FROM ubuntu:latest
 
+LABEL maintainer="Gabriel Duque <gabriel@zuh0.com> (zuh0)"
+
+LABEL org.label-schema.build-date="$BUILD_DATE"
+
+LABEL org.label-schema.name="esp-idf-docker"
+
+LABEL org.label-schema.description="Docker image to build and flash ESP32 board using esp-idf."
+
+LABEL org.label-schema.usage="https://github.com/zuh0/esp-idf-docker/blob/master/README.md"
+
+LABEL org.label-schema.url="https://hub.docker.com/r/zuh0/esp-idf"
+
+LABEL org.label-schema.vcs-url="https://github.com/zuh0/esp-idf"
+
+LABEL org.label-schema.vcs-ref="$VCS_REF"
+
+LABEL org.label-schema.version="$VERSION"
+
+LABEL org.label-schema.schema-version="1.0"
+
+LABEL org.label-schema.docker.cmd="docker run --device=/dev/ttyUSB0 -v $PWD:/root/esp/project zuh0/esp-idf-docker"
+
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
