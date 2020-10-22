@@ -51,14 +51,14 @@ RUN apt-get update \
     && git clone --recursive https://github.com/espressif/esp-idf.git \
     && cd $HOME/esp/esp-idf \
     && ./install.sh \
-    && mkdir $HOME/esp/project
+    && mkdir /code
 
 COPY bashrc /root/.bashrc
 
 COPY bash_wrapper /bash_wrapper
 
-WORKDIR /root/esp/project
+WORKDIR /code
 
-VOLUME /root/esp/project
+VOLUME /code
 
 ENTRYPOINT ["/bash_wrapper"]
