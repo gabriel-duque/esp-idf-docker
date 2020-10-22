@@ -6,6 +6,9 @@
 # Disallow errors
 set -eo pipefail
 
+# Set HOME if unset
+HOME="${HOME:=/root}"
+
 # Source our bash run commands file if it exists ans is readable
 if test -f "$HOME/.bashrc" -a -r "$HOME/.bashrc"; then
     . "$HOME/.bashrc"
