@@ -1,5 +1,6 @@
 # Ignore everything
 *
 
-# Bring our bash wrapper script back into context
+# Bring our bash wrapper script and custom bashrc back into context
 !bash_wrapper
+!bashrc

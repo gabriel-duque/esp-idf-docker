@@ -20,7 +20,7 @@ LABEL org.label-schema.version="$VERSION"
 
 LABEL org.label-schema.schema-version="1.0"
 
-LABEL org.label-schema.docker.cmd="docker run --device=/dev/ttyUSB0 -v $PWD:/root/esp/project zuh0/esp-idf-docker"
+LABEL org.label-schema.docker.cmd="docker run --device=<esp-device> -v $PWD:/root/esp/project zuh0/esp-idf-docker"
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y \
@@ -51,8 +51,9 @@ RUN apt-get update \
     && git clone --recursive https://github.com/espressif/esp-idf.git \
     && cd $HOME/esp/esp-idf \
     && ./install.sh \
-    && echo '. $HOME/esp/esp-idf/export.sh' >> $HOME/.bashrc \
     && mkdir $HOME/esp/project
+
+COPY bashrc /root/.bashrc
 
 COPY bash_wrapper /bash_wrapper
 
